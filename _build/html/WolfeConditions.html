@@ -42,8 +42,6 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -272,48 +270,42 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="lema-3-1">
 <h1>Lema 3.1<a class="headerlink" href="#lema-3-1" title="Permalink to this headline">¶</a></h1>
-<p>Suponga que <span class="math notranslate nohighlight">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> es continua y diferenciable. Sea <span class="math notranslate nohighlight">\(p_k\)</span> una dirección de descenso en <span class="math notranslate nohighlight">\(x_k\)</span>, y asuma que <span class="math notranslate nohighlight">\(f\)</span> es acotado por debajo por los rayos <span class="math notranslate nohighlight">\(\ell_α=\{x_k+αp_k\mid α&gt;0\}\)</span>. Entonces si <span class="math notranslate nohighlight">\(0&lt; c_1&lt; c_2 &lt; 1\)</span>, entonces existen intervalos de tamaños de paso que satisface las condiciones de Wolf y las condiciones fuertes de Wolf.</p>
+<p>Suponga que $f:\mathbb{R}^n\to\mathbb{R}$ es continua y diferenciable. Sea $p_k$ una dirección de descenso en $x_k$, y asuma que $f$ es acotado por debajo por los rayos $\ell_α={x_k+αp_k\mid α&gt;0}$. Entonces si $0&lt; c_1&lt; c_2 &lt; 1$, entonces existen intervalos de tamaños de paso que satisface las condiciones de Wolf y las condiciones fuertes de Wolf.</p>
 <div class="section" id="demostracion">
 <h2>Demostración<a class="headerlink" href="#demostracion" title="Permalink to this headline">¶</a></h2>
 <p>Consideremos
-$<span class="math notranslate nohighlight">\(ϕ(α)=f(x_k+αp_k)\)</span><span class="math notranslate nohighlight">\(
-Como \)</span>f<span class="math notranslate nohighlight">\( es acotada \)</span>ϕ<span class="math notranslate nohighlight">\( tambien lo es. Definimos 
-\)</span><span class="math notranslate nohighlight">\(l(α)=f(x_k)+αc_1∇f(x_k)^Tp_k\)</span><span class="math notranslate nohighlight">\( 
-Como \)</span>l(\alpha)<span class="math notranslate nohighlight">\( no esta acotada por debajo necesariamente existe \)</span>\alpha^*=\min{α\mid f(x_k+αp_k)=\phi (α)}$ tal que</p>
-<div class="math notranslate nohighlight">
-\[f(x_k+α^*p_k)=f(x_k)+α^*c_1∇f(x_k)^Tp_k\ \ (⋆)\]</div>
-<p>Luego, <span class="math notranslate nohighlight">\(ℓ_α\)</span> es un conjunto convexo <span class="math notranslate nohighlight">\(∀α&gt;0\)</span>, por lo tanto al tomar
-<span class="math notranslate nohighlight">\(α'\in(0,α^*)\)</span> entonces</p>
-<div class="math notranslate nohighlight">
-\[f(x_k+α^*p_k)\leq f(x_k)+α^*c_1∇f(x_k)^Tp_k\]</div>
+$$ϕ(α)=f(x_k+αp_k)$$
+Como $f$ es acotada $ϕ$ tambien lo es. Definimos
+$$l(α)=f(x_k)+αc_1∇f(x_k)^Tp_k$$
+Como $l(\alpha)$ no esta acotada por debajo necesariamente existe $\alpha^*=\min{α\mid f(x_k+αp_k)=\phi (α)}$ tal que</p>
+<p>$$f(x_k+α^*p_k)=f(x_k)+α^*c_1∇f(x_k)^Tp_k\ \ (⋆)$$</p>
+<p>Luego, $ℓ_α$ es un conjunto convexo $∀α&gt;0$, por lo tanto al tomar
+$α’\in(0,α^*)$ entonces</p>
+<p>$$f(x_k+α^*p_k)\leq f(x_k)+α^*c_1∇f(x_k)^Tp_k$$</p>
 <p>Teniendo asi la condición de suficiente decrecimiento. Luego, para el segundo criterio usaremos el Teorema del valor medio para funciones multivariables.
-Entonces, para algun <span class="math notranslate nohighlight">\(α^{**}∈(0,α^*)\)</span></p>
-<div class="math notranslate nohighlight">
-\[f(x_k+α^*p_k)=f(x_k)+\alpha^*∇f(x_k+α^{**}p)p^T (⋆⋆)\]</div>
-<p>Por <span class="math notranslate nohighlight">\((\star)\)</span> tenemos que</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}f(x_k+α^*p_k)-f(x_k)=α^*c_1∇f(x_k)^Tp_k$$, \\De manera similar con $(⋆\star)$, e igualando tenemos que \\$$\alpha^* ∇f(x_k+α^{*.*}p)p^T=α^*c_1∇f(x_k)^Tp_k\end{aligned}\end{align} \]</div>
-<p>y para algun <span class="math notranslate nohighlight">\(1 &gt; c_2 &gt; c_1\)</span> tenemos que</p>
-<div class="math notranslate nohighlight">
-\[ ∇f(x_k+α^{**} p)p^T=c_1∇f(x_k)^Tp_k \geq c_2∇f(x_k)^Tp_k\]</div>
+Entonces, para algun $α^{**}∈(0,α^*)$</p>
+<p>$$f(x_k+α^*p_k)=f(x_k)+\alpha^*∇f(x_k+α^{**}p)p^T (⋆⋆)$$</p>
+<p>Por $(\star)$ tenemos que</p>
+<p>$$f(x_k+α^*p_k)-f(x_k)=α^*c_1∇f(x_k)^Tp_k$$,</p>
+<p>De manera similar con $(⋆\star)$, e igualando tenemos que</p>
+<p>$$\alpha^* ∇f(x_k+α^{<em>.</em>}p)p^T=α^*c_1∇f(x_k)^Tp_k$$</p>
+<p>y para algun $1 &gt; c_2 &gt; c_1$ tenemos que</p>
+<p>$$ ∇f(x_k+α^{**} p)p^T=c_1∇f(x_k)^Tp_k \geq c_2∇f(x_k)^Tp_k$$</p>
 <p>Como ambos son negativos tenemos las condiciones de Wolf, ahora para obtener las fuertes debemos aplicar el valor absoluto a la segunda condicion, por tanto se invertira la desigualdad.Entonces teneemos que</p>
-<div class="math notranslate nohighlight">
-\[|∇f(x_k+α^{**}p)p^T|\leq c_2 |∇f(x_k)^Tp_k|\]</div>
+<p>$$|∇f(x_k+α^{**}p)p^T|\leq c_2 |∇f(x_k)^Tp_k|$$</p>
 <p>Teniendo asi las condiciones fuertes de Wolf.</p>
 <div class="section" id="teoremas">
 <h3>Teoremas<a class="headerlink" href="#teoremas" title="Permalink to this headline">¶</a></h3>
 <p>Condiciones de Wolf
-$<span class="math notranslate nohighlight">\(f(x_k+αp_k)\leq f(x_k)+c_1 α_k \nabla f(k_k)^Tp_k\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\nabla f(x_k+α_kp_k)^Tp_k\geq c_2 \nabla f_(x_k)^Tp_k\)</span>$
+$$f(x_k+αp_k)\leq f(x_k)+c_1 α_k \nabla f(k_k)^Tp_k$$
+$$\nabla f(x_k+α_kp_k)^Tp_k\geq c_2 \nabla f_(x_k)^Tp_k$$
 Condiciones Fuertes de Wolf</p>
-<div class="math notranslate nohighlight">
-\[f(x_k+αp_k)\leq f(x_k)+c_1 α_k ∇f_k^Tp_k\]</div>
-<div class="math notranslate nohighlight">
-\[|\nabla f(x_k+α_kp_k)^Tp_k|\leq c_2| ∇f_k^Tp_k|\]</div>
+<p>$$f(x_k+αp_k)\leq f(x_k)+c_1 α_k ∇f_k^Tp_k$$
+$$|\nabla f(x_k+α_kp_k)^Tp_k|\leq c_2| ∇f_k^Tp_k|$$</p>
 <p>Teorema del valor medio para funciones multivariables.</p>
-<p>Sea <span class="math notranslate nohighlight">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> para cualquier vector <span class="math notranslate nohighlight">\(p\)</span> tenemos que
-$<span class="math notranslate nohighlight">\(f(x+p)=f(x)+∇f(x+αp)^Tp\)</span><span class="math notranslate nohighlight">\(
-Para algun \)</span>α\in (0,1)$</p>
+<p>Sea $f:\mathbb{R}^n\to\mathbb{R}$ para cualquier vector $p$ tenemos que
+$$f(x+p)=f(x)+∇f(x+αp)^Tp$$
+Para algun $α\in (0,1)$</p>
 </div>
 </div>
 </div>
