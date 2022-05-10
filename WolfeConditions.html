@@ -274,37 +274,65 @@
 <div class="section" id="demostracion">
 <h2>Demostración<a class="headerlink" href="#demostracion" title="Permalink to this headline">¶</a></h2>
 <p>Consideremos
-$$ϕ(α)=f(x_k+αp_k)$$
-Como $f$ es acotada $ϕ$ tambien lo es. Definimos
-$$l(α)=f(x_k)+αc_1∇f(x_k)^Tp_k$$
-Como $l(\alpha)$ no esta acotada por debajo necesariamente existe $\alpha^*=\min{α\mid f(x_k+αp_k)=\phi (α)}$ tal que</p>
-<p>$$f(x_k+α^*p_k)=f(x_k)+α^*c_1∇f(x_k)^Tp_k\ \ (⋆)$$</p>
+$$
+ϕ(α)=f(x_k+αp_k)
+$$</p>
+<p>Como $f$ es acotada $ϕ$ tambien lo es. Definimos
+$$
+l(α)=f(x_k)+αc_1∇f(x_k)^Tp_k
+$$</p>
+<p>Como $l(\alpha)$ no esta acotada por debajo necesariamente existe $\alpha^*=\min{α\mid f(x_k+αp_k)=\phi (α)}$ tal que</p>
+<p>$$
+f(x_k+α^*p_k)=f(x_k)+α^*c_1∇f(x_k)^Tp_k\ \ (⋆)
+$$</p>
 <p>Luego, $ℓ_α$ es un conjunto convexo $∀α&gt;0$, por lo tanto al tomar
 $α’\in(0,α^*)$ entonces</p>
-<p>$$f(x_k+α^*p_k)\leq f(x_k)+α^*c_1∇f(x_k)^Tp_k$$</p>
+<p>$$
+f(x_k+α^*p_k)\leq f(x_k)+α^*c_1∇f(x_k)^Tp_k
+$$</p>
 <p>Teniendo asi la condición de suficiente decrecimiento. Luego, para el segundo criterio usaremos el Teorema del valor medio para funciones multivariables.
 Entonces, para algun $α^{**}∈(0,α^*)$</p>
-<p>$$f(x_k+α^*p_k)=f(x_k)+\alpha^*∇f(x_k+α^{**}p)p^T (⋆⋆)$$</p>
+<p>$$
+f(x_k+α^*p_k)=f(x_k)+\alpha^*∇f(x_k+α^{**}p)p^T (⋆⋆)
+$$</p>
 <p>Por $(\star)$ tenemos que</p>
-<p>$$f(x_k+α^*p_k)-f(x_k)=α^*c_1∇f(x_k)^Tp_k$$,</p>
+<p>$$
+f(x_k+α^*p_k)-f(x_k)=α^*c_1∇f(x_k)^Tp_k
+$$,</p>
 <p>De manera similar con $(⋆\star)$, e igualando tenemos que</p>
-<p>$$\alpha^* ∇f(x_k+α^{<em>.</em>}p)p^T=α^*c_1∇f(x_k)^Tp_k$$</p>
+<p>$$
+\alpha^* ∇f(x_k+α^{<em>.</em>}p)p^T=α^*c_1∇f(x_k)^Tp_k
+$$</p>
 <p>y para algun $1 &gt; c_2 &gt; c_1$ tenemos que</p>
-<p>$$ ∇f(x_k+α^{**} p)p^T=c_1∇f(x_k)^Tp_k \geq c_2∇f(x_k)^Tp_k$$</p>
+<p>$$
+∇f(x_k+α^{**} p)p^T=c_1∇f(x_k)^Tp_k \geq c_2∇f(x_k)^Tp_k
+$$</p>
 <p>Como ambos son negativos tenemos las condiciones de Wolf, ahora para obtener las fuertes debemos aplicar el valor absoluto a la segunda condicion, por tanto se invertira la desigualdad.Entonces teneemos que</p>
-<p>$$|∇f(x_k+α^{**}p)p^T|\leq c_2 |∇f(x_k)^Tp_k|$$</p>
+<p>$$
+\text{abs}(\nabla f(x_k+α^{**}p)p^T)\leq c_2 \text{abs}(∇f(x_k)^Tp_k)
+$$</p>
 <p>Teniendo asi las condiciones fuertes de Wolf.</p>
 <div class="section" id="teoremas">
 <h3>Teoremas<a class="headerlink" href="#teoremas" title="Permalink to this headline">¶</a></h3>
 <p>Condiciones de Wolf
-$$f(x_k+αp_k)\leq f(x_k)+c_1 α_k \nabla f(k_k)^Tp_k$$
-$$\nabla f(x_k+α_kp_k)^Tp_k\geq c_2 \nabla f_(x_k)^Tp_k$$
+$$
+f(x_k+αp_k)\leq f(x_k)+c_1 α_k \nabla f(x_k)^Tp_k
+$$
+$$
+\nabla f(x_k+α_kp_k)^Tp_k\geq c_2 \nabla f(x_k)^Tp_k
+$$
 Condiciones Fuertes de Wolf</p>
-<p>$$f(x_k+αp_k)\leq f(x_k)+c_1 α_k ∇f_k^Tp_k$$
-$$|\nabla f(x_k+α_kp_k)^Tp_k|\leq c_2| ∇f_k^Tp_k|$$</p>
+<p>$$
+f(x_k+αp_k)\leq f(x_k)+c_1 α_k ∇f_k^Tp_k
+$$
+$$
+\text{abs}(\nabla f(x_k+α_kp_k)^Tp_k)\leq c_2\text{abs}(∇f(x_k)^Tp_k)
+$$</p>
 <p>Teorema del valor medio para funciones multivariables.</p>
 <p>Sea $f:\mathbb{R}^n\to\mathbb{R}$ para cualquier vector $p$ tenemos que
-$$f(x+p)=f(x)+∇f(x+αp)^Tp$$
+$$
+f(x+p)=f(x)+∇f(x+αp)^Tp
+$$
 Para algun $α\in (0,1)$</p>
 </div>
 </div>
