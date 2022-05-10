@@ -42,6 +42,8 @@
     <script src="_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -217,13 +219,30 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#demostracion">
-   Demostración
+   Demostracion
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#teoremas">
      Teoremas
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#condiciones-de-wolf">
+       Condiciones de Wolf
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#condiciones-fuertes-de-wolf">
+       Condiciones Fuertes de Wolf
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#teorema-del-valor-medio-para-funciones-multivariables">
+       Teorema del valor medio para funciones multivariables.
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -249,13 +268,30 @@
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#demostracion">
-   Demostración
+   Demostracion
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#teoremas">
      Teoremas
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#condiciones-de-wolf">
+       Condiciones de Wolf
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#condiciones-fuertes-de-wolf">
+       Condiciones Fuertes de Wolf
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#teorema-del-valor-medio-para-funciones-multivariables">
+       Teorema del valor medio para funciones multivariables.
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -270,70 +306,90 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="lema-3-1">
 <h1>Lema 3.1<a class="headerlink" href="#lema-3-1" title="Permalink to this headline">¶</a></h1>
-<p>Suponga que $f:\mathbb{R}^n\to\mathbb{R}$ es continua y diferenciable. Sea $p_k$ una dirección de descenso en $x_k$, y asuma que $f$ es acotado por debajo por los rayos $\ell_α={x_k+αp_k\mid α&gt;0}$. Entonces si $0&lt; c_1&lt; c_2 &lt; 1$, entonces existen intervalos de tamaños de paso que satisface las condiciones de Wolf y las condiciones fuertes de Wolf.</p>
+<p>Suponga que <span class="math notranslate nohighlight">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> es continua y diferenciable. Sea <span class="math notranslate nohighlight">\(p_k\)</span> una direccion de descenso en <span class="math notranslate nohighlight">\(x_k\)</span>, y asuma que <span class="math notranslate nohighlight">\(f\)</span> es acotado por debajo por los rayos <span class="math notranslate nohighlight">\(\ell_{\alpha} =\{x_k+\alpha p_k\mid \alpha &gt; 0 \}\)</span>.
+Entonces para  <span class="math notranslate nohighlight">\(0&lt; c_1&lt; c_2 &lt; 1\)</span>, entonces existen intervalos de tamaños de paso que satisface las condiciones de Wolf y las condiciones fuertes de Wolf.</p>
 <div class="section" id="demostracion">
-<h2>Demostración<a class="headerlink" href="#demostracion" title="Permalink to this headline">¶</a></h2>
-<p>Consideremos
-$$
-ϕ(α)=f(x_k+αp_k)
-$$</p>
-<p>Como $f$ es acotada $ϕ$ tambien lo es. Definimos
-$$
-l(α)=f(x_k)+αc_1∇f(x_k)^Tp_k
-$$</p>
-<p>Como $l(\alpha)$ no esta acotada por debajo necesariamente existe $\alpha^*=\min{α\mid f(x_k+αp_k)=\phi (α)}$ tal que</p>
-<p>$$
-f(x_k+α^*p_k)=f(x_k)+α^*c_1∇f(x_k)^Tp_k\ \ (⋆)
-$$</p>
-<p>Luego, $ℓ_α$ es un conjunto convexo $∀α&gt;0$, por lo tanto al tomar
-$α’\in(0,α^*)$ entonces</p>
-<p>$$
-f(x_k+α^*p_k)\leq f(x_k)+α^*c_1∇f(x_k)^Tp_k
-$$</p>
+<h2>Demostracion<a class="headerlink" href="#demostracion" title="Permalink to this headline">¶</a></h2>
+<p>Consideremos</p>
+<div class="math notranslate nohighlight">
+\[
+  \phi(\alpha)=f(x_k+\alpha p_k)
+\]</div>
+<p>Como <span class="math notranslate nohighlight">\(f\)</span> es acotada <span class="math notranslate nohighlight">\(\phi \)</span> tambien lo es. Definimos</p>
+<div class="math notranslate nohighlight">
+\[
+  l(\alpha )=f(x_k)+\alpha c_1\nabla f(x_k)^Tp_k
+\]</div>
+<p>Como <span class="math notranslate nohighlight">\(l(\alpha)\)</span> no esta acotada por debajo necesariamente existe <span class="math notranslate nohighlight">\(\alpha^*=\min\{\alpha\mid f(x_k+\alpha p_k)=\phi (\alpha)\}\)</span> tal que</p>
+<div class="math notranslate nohighlight">
+\[
+  f(x_k+\alpha^*p_k)=f(x_k)+\alpha ^*c_1 \nabla f(x_k)^Tp_k\ \ (⋆)
+\]</div>
+<p>Luego, <span class="math notranslate nohighlight">\(ℓ_\alpha\)</span> es un conjunto convexo <span class="math notranslate nohighlight">\(∀\alpha&gt;0\)</span>, por lo tanto al tomar
+<span class="math notranslate nohighlight">\(\alpha'\in(0,\alpha^*)\)</span> entonces</p>
+<div class="math notranslate nohighlight">
+\[
+  f(x_k+\alpha ^*p_k)\leq f(x_k)+\alpha ^*c_1 \nabla f(x_k)^Tp_k
+\]</div>
 <p>Teniendo asi la condición de suficiente decrecimiento. Luego, para el segundo criterio usaremos el Teorema del valor medio para funciones multivariables.
-Entonces, para algun $α^{**}∈(0,α^*)$</p>
-<p>$$
-f(x_k+α^*p_k)=f(x_k)+\alpha^*∇f(x_k+α^{**}p)p^T (⋆⋆)
-$$</p>
-<p>Por $(\star)$ tenemos que</p>
-<p>$$
-f(x_k+α^*p_k)-f(x_k)=α^*c_1∇f(x_k)^Tp_k
-$$,</p>
-<p>De manera similar con $(⋆\star)$, e igualando tenemos que</p>
-<p>$$
-\alpha^* ∇f(x_k+α^{<em>.</em>}p)p^T=α^*c_1∇f(x_k)^Tp_k
-$$</p>
-<p>y para algun $1 &gt; c_2 &gt; c_1$ tenemos que</p>
-<p>$$
-∇f(x_k+α^{**} p)p^T=c_1∇f(x_k)^Tp_k \geq c_2∇f(x_k)^Tp_k
-$$</p>
+Entonces, para algun <span class="math notranslate nohighlight">\(\alpha^{**}\in (0,\alpha^*)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+  f(x_k+\alpha^*p_k)=f(x_k)+\alpha^* \nabla f(x_k+\alpha^{**}p)p^T (⋆⋆)
+\]</div>
+<p>Por <span class="math notranslate nohighlight">\((\star)\)</span> tenemos que</p>
+<div class="math notranslate nohighlight">
+\[
+  f(x_k+\alpha^*p_k)-f(x_k)=\alpha^*c_1\nabla f(x_k)^Tp_k
+\]</div>
+<p>,De manera similar con <span class="math notranslate nohighlight">\((\star\star)\)</span>, e igualando tenemos que</p>
+<div class="math notranslate nohighlight">
+\[
+  \alpha^* \nabla f(x_k+\alpha^{**} p ) p^T=\alpha^*c_1 \nabla f(x_k)^Tp_k
+\]</div>
+<p>y para algun <span class="math notranslate nohighlight">\(1 &gt; c_2 &gt; c_1\)</span> tenemos que
+$<span class="math notranslate nohighlight">\( 
+  \nabla f(x_k+\alpha^{**} p)p^T=c_1\nabla f(x_k)^Tp_k \geq c_2 \nabla f(x_k)^Tp_k
+\)</span>$</p>
 <p>Como ambos son negativos tenemos las condiciones de Wolf, ahora para obtener las fuertes debemos aplicar el valor absoluto a la segunda condicion, por tanto se invertira la desigualdad.Entonces teneemos que</p>
-<p>$$
-\text{abs}(\nabla f(x_k+α^{**}p)p^T)\leq c_2 \text{abs}(∇f(x_k)^Tp_k)
-$$</p>
+<div class="math notranslate nohighlight">
+\[
+   \text{abs}(\nabla f(x_k+\alpha^{**}p)p^T)\leq c_2 \text{abs}(\nabla f(x_k)^Tp_k)
+ \]</div>
 <p>Teniendo asi las condiciones fuertes de Wolf.</p>
 <div class="section" id="teoremas">
 <h3>Teoremas<a class="headerlink" href="#teoremas" title="Permalink to this headline">¶</a></h3>
-<p>Condiciones de Wolf
-$$
-f(x_k+αp_k)\leq f(x_k)+c_1 α_k \nabla f(x_k)^Tp_k
-$$
-$$
-\nabla f(x_k+α_kp_k)^Tp_k\geq c_2 \nabla f(x_k)^Tp_k
-$$
-Condiciones Fuertes de Wolf</p>
-<p>$$
-f(x_k+αp_k)\leq f(x_k)+c_1 α_k ∇f_k^Tp_k
-$$
-$$
-\text{abs}(\nabla f(x_k+α_kp_k)^Tp_k)\leq c_2\text{abs}(∇f(x_k)^Tp_k)
-$$</p>
-<p>Teorema del valor medio para funciones multivariables.</p>
-<p>Sea $f:\mathbb{R}^n\to\mathbb{R}$ para cualquier vector $p$ tenemos que
-$$
-f(x+p)=f(x)+∇f(x+αp)^Tp
-$$
-Para algun $α\in (0,1)$</p>
+<div class="section" id="condiciones-de-wolf">
+<h4>Condiciones de Wolf<a class="headerlink" href="#condiciones-de-wolf" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+  f(x_k+\alpha p_k)\leq f(x_k)+c_1 \alpha_k \nabla f(x_k)^Tp_k
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+   \nabla f(x_k+\alpha p_k)^Tp_k\geq c_2 \nabla f(x_k)^Tp_k
+\]</div>
+</div>
+<div class="section" id="condiciones-fuertes-de-wolf">
+<h4>Condiciones Fuertes de Wolf<a class="headerlink" href="#condiciones-fuertes-de-wolf" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[
+  f(x_k+\alpha p_k)\leq f(x_k)+c_1 \alpha_k \nabla f_k^Tp_k
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+  \text{abs}(\nabla f(x_k+\alpha p_k)^Tp_k)\leq c_2\text{abs}(\nabla f (x_k)^Tp_k)
+\]</div>
+</div>
+<div class="section" id="teorema-del-valor-medio-para-funciones-multivariables">
+<h4>Teorema del valor medio para funciones multivariables.<a class="headerlink" href="#teorema-del-valor-medio-para-funciones-multivariables" title="Permalink to this headline">¶</a></h4>
+<p>Sea <span class="math notranslate nohighlight">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> para cualquier vector <span class="math notranslate nohighlight">\(p\)</span> tenemos que</p>
+<div class="math notranslate nohighlight">
+\[
+  f(x+p)=f(x)+\nabla f(x+\alpha p)^Tp
+\]</div>
+<p>Para algun <span class="math notranslate nohighlight">\(\alpha\in (0,1)\)</span></p>
+</div>
 </div>
 </div>
 </div>
